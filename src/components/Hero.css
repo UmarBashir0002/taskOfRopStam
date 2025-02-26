@@ -1,0 +1,75 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fill the viewport (adjust if needed) */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Dark overlay for readability of text */
+  .hero-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align left as in screenshot */
+  }
+  
+  /* Container to limit max width and center content horizontally */
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+  }
+  
+  .hero-content {
+    max-width: 600px; /* Limit text width */
+    color: #fff;
+    margin-top: 20vh; /* Additional top spacing if desired */
+
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-weight: 200;
+  }
+  
+  .hero-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px; /* Adjust the value as needed */
+
+  }
+  
+  .hero-button {
+    background-color: #55cfa2;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* =========== MEDIA QUERIES =========== */
+  @media (max-width: 768px) {
+    .hero {
+      height: 70vh; 
+    }
+  
+    .hero-heading {
+      font-size: 2rem;
+    }
+  
+    .hero-container {
+      padding: 0 1rem;
+    }
+  }
+  

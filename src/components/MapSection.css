@@ -1,0 +1,146 @@
+/****************************************************
+ * MAP SECTION WRAPPER
+ ****************************************************/
+ .map-section {
+  width: 100%;
+  background-color: #fff;
+  padding: 3rem 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/****************************************************
+ * HEADINGS & DESCRIPTION
+ ****************************************************/
+.map-subtitle {
+  color: #55cfa2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.map-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.map-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+/****************************************************
+ * CONTENT ROW: LEFT (IMAGE + CITY) & RIGHT (MAP)
+ ****************************************************/
+.map-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.map-left,
+.map-right {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+/* Toronto Image */
+.toronto-image {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+/****************************************************
+ * CITY INFO (TORONTO)
+ ****************************************************/
+.city-info {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.city-info h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.city-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-info li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.city-info li::before {
+  content: "•";
+  color: #55cfa2;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  top: 0;
+}
+
+/* Link styling */
+.city-info a {
+  color: #55cfa2;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.city-info a:hover {
+  text-decoration: underline;
+}
+
+.map-right {
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .map-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-left,
+  .map-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .city-info {
+    text-align: center;
+  }
+
+  .city-info li {
+    padding-left: 0;
+  }
+
+  .city-info li::before {
+    left: 50%;
+    transform: translateX(-200%);
+  }
+}

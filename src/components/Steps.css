@@ -1,0 +1,156 @@
+.steps-section {
+  background: linear-gradient(to bottom, #e8fdf3 0%, #fff 100%);
+  padding: 3rem 1rem;
+  text-align: left;
+}
+
+.steps-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  flex-wrap: wrap;
+}
+
+.steps-headings h3 {
+  color: #2ca67a;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.steps-headings h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.steps-download-cta {
+  background-color: #2ca67a;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.step-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.step-box h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.step-box p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.step1 {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+
+.step2 {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+}
+
+.orb {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.step3 {
+  grid-column: 1;
+  grid-row: 3;
+  align-self: center;
+}
+
+.step4 {
+  grid-column: 3;
+  grid-row: 3;
+  align-self: center;
+}
+
+.step5 {
+  grid-column: 2;
+  grid-row: 4;
+  align-self: start;
+  justify-self: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+@media (max-width: 992px) {
+  .steps-headings h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .steps-download-cta {
+    margin-top: 1rem;
+  }
+
+  .steps-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-box, .orb {
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .step1, .step2, .step3, .step4, .step5 {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: auto;
+    justify-self: auto;
+  }
+
+  .orb img {
+    margin: 0 auto;
+  }
+}
