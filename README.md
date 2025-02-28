@@ -25,19 +25,10 @@ Suboxone Landing is a responsive React-based web application designed as a test 
 
 2.  cd suboxone-landing
 
-3.  npm install
+3.  npm i  -f
 
-4.  npm start
+4. npm i   react-simple-maps  -f
+
+5.  npm start
 
 The application will be available at http://localhost:3000.
-
-
-echo "# taskOfRopStam" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/UmarBashir0002/taskOfRopStam.git
-git push -u origin main
-
-
