@@ -14,18 +14,19 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const MIN_DISPLAY_TIME = 2000; // 2 seconds
+  
     const handleLoad = () => {
-      console.log('All assets loaded, hiding loader.');
-      setIsLoading(false);
+      setTimeout(() => {
+        console.log('Assets loaded and minimum time passed, hiding loader.');
+        setIsLoading(false);
+      }, MIN_DISPLAY_TIME);
     };
-
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
-    }
+  
+    window.addEventListener('load', handleLoad);
+    return () => window.removeEventListener('load', handleLoad);
   }, []);
+  
 
   if (isLoading) {
     return <Loading />;
