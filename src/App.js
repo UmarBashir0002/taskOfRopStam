@@ -14,18 +14,43 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const MIN_DISPLAY_TIME = 2000; // 2 seconds
+    console.log("Component mounted. isLoading:", isLoading);
+    const MIN_LOADING_TIME = 2000; // Minimum time to show the loader
+    const startTime = Date.now();
   
     const handleLoad = () => {
-      setTimeout(() => {
-        console.log('Assets loaded and minimum time passed, hiding loader.');
+      const elapsedTime = Date.now() - startTime;
+      const remainingTime = MIN_LOADING_TIME - elapsedTime;
+      console.log("handleLoad triggered. Elapsed:", elapsedTime, "ms");
+      if (remainingTime > 0) {
+        setTimeout(() => {
+          console.log("Minimum time passed, hiding loader.");
+          setIsLoading(false);
+        }, remainingTime);
+      } else {
+        console.log("Hiding loader immediately.");
         setIsLoading(false);
-      }, MIN_DISPLAY_TIME);
+      }
     };
   
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
+    if (document.readyState === "complete") {
+      console.log("Document readyState is complete");
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
+      // Fallback: hide loader after 5 seconds if load event isn't fired
+      const fallbackTimeout = setTimeout(() => {
+        console.log("Fallback timeout triggered");
+        handleLoad();
+      }, 5000);
+      return () => {
+        window.removeEventListener("load", handleLoad);
+        clearTimeout(fallbackTimeout);
+      };
+    }
   }, []);
+  
+  
   
 
   if (isLoading) {
